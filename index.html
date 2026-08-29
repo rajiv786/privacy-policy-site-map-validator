@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>XML Sitemap Validator - Free Chrome Extension</title>
+
+  <meta
+    name="description"
+    content="Free XML Sitemap Validator Chrome extension for technical SEO. Validate XML sitemaps, check URLs for 404s, redirects, server errors and timeouts."
+  />
+
+  <meta
+    name="keywords"
+    content="XML sitemap validator, sitemap checker, sitemap validator, XML sitemap checker, sitemap SEO tool, technical SEO, Chrome extension"
+  />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta
+    property="og:title"
+    content="XML Sitemap Validator - Free Chrome Extension"
+  />
+
+  <meta
+    property="og:description"
+    content="Validate XML sitemaps and check URLs for 404s, redirects, server errors and timeouts."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      background: #ffffff;
+      padding: 60px 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 30px;
+    }
+
+    .extension-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+      font-size: 50px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 40px;
+      line-height: 1.2;
+      color: #111827;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 19px;
+      color: #4b5563;
+    }
+
+    /* BUTTON */
+
+    .chrome-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #1a73e8;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .chrome-button:hover {
+      background: #1557b0;
+      transform: translateY(-1px);
+    }
+
+    /* SECTIONS */
+
+    .section {
+      background: #ffffff;
+      padding: 38px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 28px;
+      color: #111827;
+    }
+
+    h3 {
+      margin-top: 28px;
+      margin-bottom: 8px;
+      color: #111827;
+      font-size: 19px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 24px;
+    }
+
+    .feature {
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    /* INSTALL */
+
+    .install-section {
+      text-align: center;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+    }
+
+    .install-section p {
+      color: #4b5563;
+    }
+
+    /* PRIVACY */
+
+    .privacy {
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .privacy h2 {
+      font-size: 24px;
+    }
+
+    /* TOOLFIO */
+
+    .toolfio {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .toolfio img {
+      display: inline-block;
+      width: 200px;
+      height: 54px;
+    }
+
+    /* LINKS */
+
+    a {
+      color: #1a73e8;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 25px 20px 40px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 25px 20px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .chrome-button {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="extension-icon">
+        🗺️
+      </div>
+
+      <h1>XML Sitemap Validator</h1>
+
+      <p class="subtitle">
+        Free Chrome extension for validating XML sitemaps,
+        checking URLs, and identifying broken links, redirects,
+        server errors, and timeouts.
+      </p>
+
+      <a
+        class="chrome-button"
+        href="https://chromewebstore.google.com/detail/xml-sitemap/olnnnhmebnbandgnhfaiggfjoklbmgab?hl=en-GB&authuser=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🚀 Add to Chrome — Free
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section">
+
+      <h2>XML Sitemap Validator for Technical SEO</h2>
+
+      <p>
+        XML Sitemap Validator is a free Chrome extension designed
+        for SEO professionals, developers, website owners, and
+        technical SEO teams who need a quick way to validate and
+        audit XML sitemaps.
+      </p>
+
+      <p>
+        An XML sitemap can be technically valid while still
+        containing URLs that return errors, redirects, or other
+        unexpected HTTP responses.
+      </p>
+
+      <p>
+        This extension helps you go beyond basic XML validation
+        by checking the URLs contained within your sitemap.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="section">
+
+      <h2>Features</h2>
+
+      <div class="features">
+
+        <div class="feature">
+          <strong>✓ XML Sitemap Validation</strong>
+          Validate XML sitemap structure and identify sitemap issues.
+        </div>
+
+        <div class="feature">
+          <strong>✓ URL Status Checking</strong>
+          Check the HTTP status of URLs contained in your sitemap.
+        </div>
+
+        <div class="feature">
+          <strong>✓ 404 Detection</strong>
+          Identify URLs returning 404 and other broken responses.
+        </div>
+
+        <div class="feature">
+          <strong>✓ Redirect Detection</strong>
+          Find URLs returning 301, 302 and other redirects.
+        </div>
+
+        <div class="feature">
+          <strong>✓ Server Error Detection</strong>
+          Identify 500 and other 5xx server errors.
+        </div>
+
+        <div class="feature">
+          <strong>✓ Timeout Detection</strong>
+          Find URLs that fail to respond within the expected time.
+        </div>
+
+        <div class="feature">
+          <strong>✓ Sitemap URL Analysis</strong>
+          Quickly inspect URLs contained in XML sitemaps.
+        </div>
+
+        <div class="feature">
+          <strong>✓ CSV Export</strong>
+          Export validation results for further analysis and reporting.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHO IS IT FOR
+    ========================== -->
+
+    <section class="section">
+
+      <h2>Who Is It For?</h2>
+
+      <ul>
+        <li>Technical SEO professionals</li>
+        <li>SEO agencies</li>
+        <li>SEO consultants</li>
+        <li>Web developers</li>
+        <li>Website owners</li>
+        <li>Digital marketing teams</li>
+        <li>Website migration teams</li>
+        <li>SEO audit professionals</li>
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         USE CASES
+    ========================== -->
+
+    <section class="section">
+
+      <h2>Common Use Cases</h2>
+
+      <h3>Technical SEO Audits</h3>
+
+      <p>
+        Quickly check whether URLs included in an XML sitemap
+        are returning healthy HTTP responses.
+      </p>
+
+      <h3>Website Migrations</h3>
+
+      <p>
+        Check sitemap URLs after a website migration to identify
+        broken URLs and unexpected redirects.
+      </p>
+
+      <h3>Regular Sitemap Monitoring</h3>
+
+      <p>
+        Periodically validate your sitemap and identify URLs
+        that may need technical attention.
+      </p>
+
+      <h3>Large XML Sitemaps</h3>
+
+      <p>
+        Inspect large numbers of sitemap URLs without manually
+        opening each URL individually.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         INSTALL
+    ========================== -->
+
+    <section class="section install-section">
+
+      <h2>Install XML Sitemap Validator</h2>
+
+      <p>
+        Start validating your XML sitemap directly from Chrome.
+      </p>
+
+      <a
+        class="chrome-button"
+        href="https://chromewebstore.google.com/detail/xml-sitemap/olnnnhmebnbandgnhfaiggfjoklbmgab?hl=en-GB&authuser=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Add to Chrome — Free
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         PRIVACY POLICY
+    ========================== -->
+
+    <section class="section privacy">
+
+      <h2>Privacy Policy</h2>
+
+      <p>
+        XML Sitemap Validator is designed to provide sitemap
+        validation and URL checking functionality.
+      </p>
+
+      <p>
+        The extension does not require users to create an account
+        to use its core functionality.
+      </p>
+
+      <p>
+        For complete information about data collection, usage,
+        permissions, and privacy practices, please review the
+        complete privacy policy.
+      </p>
+
+      <p>
+        <a
+          href="https://github.com/rajiv786/privacy-policy-site-map-validator"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Complete Privacy Policy
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLFIO VERIFICATION BADGE
+    ========================== -->
+
+    <section class="toolfio">
+
+      <a
+        href="https://toolfio.com"
+        target="_blank"
+        rel="dofollow"
+      >
+        <img
+          src="https://toolfio.com/toolfio-light-badge.png"
+          alt="Featured on Toolfio"
+          width="200"
+          height="54"
+        />
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+    © 2026 XML Sitemap Validator. All rights reserved.
+  </footer>
+
+</body>
+</html>
