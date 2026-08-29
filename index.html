@@ -235,7 +235,26 @@
       color: #6b7280;
       font-size: 14px;
     }
+.directory-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
 
+.directory-badges .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.directory-badges img {
+  display: block;
+  width: 200px;
+  height: 54px;
+}
     /* MOBILE */
 
     @media (max-width: 650px) {
@@ -514,23 +533,45 @@
     <!-- =========================
          TOOLFIO VERIFICATION BADGE
     ========================== -->
+<!-- DIRECTORY BADGES -->
+<section class="directory-badges">
 
-    <section class="toolfio">
+  <!-- Toolfio -->
+  <div class="badge">
+    <a
+      href="https://toolfio.com"
+      target="_blank"
+      rel="dofollow"
+    >
+      <img
+        src="https://toolfio.com/toolfio-light-badge.png"
+        alt="Featured on Toolfio"
+        width="200"
+        height="54"
+      />
+    </a>
+  </div>
 
-      <a
-        href="https://toolfio.com"
-        target="_blank"
-        rel="dofollow"
-      >
-        <img
-          src="https://toolfio.com/toolfio-light-badge.png"
-          alt="Featured on Toolfio"
-          width="200"
-          height="54"
-        />
-      </a>
+  <!-- Alternative.tools -->
+  <div class="badge">
+    <a
+      href="https://alternative.tools/item/xml-sitemap-validator?utm_source=badge&utm_medium=referral&utm_campaign=featured-badge"
+      target="_blank"
+      rel="dofollow"
+    >
+      <img
+        src="https://alternative.tools/badge.svg?theme=light&width=200&height=54"
+        alt="Featured on Alternative.tools"
+        width="200"
+        height="54"
+        loading="lazy"
+      />
+    </a>
+  </div>
 
-    </section>
+</section>
+    
+   
 
   </main>
 
